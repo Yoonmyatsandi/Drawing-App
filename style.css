@@ -15,7 +15,6 @@ body {
   background-position: center;
   object-fit: cover;
   color: rgb(199, 245, 179);
-  overflow-y: hidden;
 }
 
 .container {
