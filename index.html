@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing App</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules//bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="tools">
+        <div class="row">
+          <label for="" class="tit"> Shapes </label>
+          <ul class="choose">
+            <li class="choice tool" id="rectangle" style="margin-top: 15px">
+              <i class="bi bi-square"></i>
+              <span>Rectangle</span>
+            </li>
+
+            <li class="choice tool" id="circle">
+              <i class="bi bi-circle"></i>
+              <span>Circle</span>
+            </li>
+
+            <li class="choice tool" id="triangle">
+              <i class="bi bi-triangle"></i>
+              <span>Triangle</span>
+            </li>
+
+            <li class="choice tool" id="star">
+              <i class="bi bi-star"></i>
+              <span>Star</span>
+            </li>
+
+            <li class="choice tool" id="moon">
+              <i class="bi bi-moon"></i>
+              <span>Moon</span>
+            </li>
+
+            <li class="choice tool" id="cloud">
+              <i class="bi bi-cloud"></i>
+              <span>Cloud</span>
+            </li>
+
+            <li class="choice tool" id="heart">
+              <i class="bi bi-heart"></i>
+              <span>Heart</span>
+            </li>
+
+            <li class="choice tool" id="hexagon">
+              <i class="bi bi-hexagon"></i>
+              <span>Hexagon</span>
+            </li>
+
+            <li class="choice tool" id="octagon">
+              <i class="bi bi-octagon"></i>
+              <span>Octagon</span>
+            </li>
+
+            <li class="choice tool" id="left-arrow">
+              <i class="bi bi-arrow-left"></i>
+              <span>Left Arrow</span>
+            </li>
+
+            <li class="choice tool" id="right-arrow">
+              <i class="bi bi-arrow-right"></i>
+              <span>Right Arrow</span>
+            </li>
+
+            <li class="choice tool" id="message">
+              <i class="bi bi-chat"></i>
+              <span>Message</span>
+            </li>
+
+            <li class="choice">
+              <input type="checkbox" id="fill" style="margin-top: 15px" />
+              <label for="fill" style="margin-top: 15px"
+                >Fill in color for</label
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="drawings">
+        <canvas></canvas>
+      </section>
+
+      <section class="tools">
+        <div class="row">
+          <label for="" class="tit"> Options </label>
+          <ul class="choose">
+            <li class="choice tool active" id="brush">
+              <i class="bi bi-brush"></i>
+              <span>Brush</span>
+            </li>
+
+            <li class="choice tool" id="eraser">
+              <i class="bi bi-eraser"></i>
+              <span>Eraser</span>
+            </li>
+
+            <li class="choice">
+              <input type="range" id="slide" min="1" max="30" value="5" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="row colors">
+          <label for="" class="tit"> Colors </label>
+          <ul class="choose">
+            <li class="choice"></li>
+            <li class="choice"></li>
+            <li class="choice"></li>
+            <li class="choice"></li>
+            <li class="choice">
+              <input type="color" id="pick" value="#69300a" />
+            </li>
+          </ul>
+          <ul class="choose">
+            <li class="choice"></li>
+            <li class="choice selected"></li>
+            <li class="choice"></li>
+            <li class="choice"></li>
+            <li class="choice">
+              <input type="color" id="pick" value="#ff6a00" />
+            </li>
+          </ul>
+        </div>
+
+        <div class="row colors">
+          <label for="" class="tit"> Neon Colors </label>
+          <ul class="choose neon">
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color">
+              <input type="color" id="picker" value="#6d483b" />
+            </li>
+          </ul>
+          <ul class="choose">
+            <li class="choice neon-color"></li>
+            <li class="choice selected neon-color"></li>
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color"></li>
+            <li class="choice neon-color">
+              <input type="color" id="picker2" value="#982198" />
+            </li>
+          </ul>
+        </div>
+        <div class="row btns">
+          <button class="clear">Clear</button>
+          <button class="save">Save</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="./main.js" defer></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

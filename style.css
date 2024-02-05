@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(./images/img3.jpg);
+  animation: moveLeftToRight 60s linear infinite;
+  background-position: center;
+  object-fit: cover;
+  color: rgb(199, 245, 179);
+  overflow-y: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  gap: 10px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+section {
+  background-color: #000000;
+  border-radius: 7px;
+}
+
+.drawings {
+  flex: 1;
+}
+
+.drawings canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #0f0f0f;
+}
+
+.tools {
+  width: 210px;
+  padding: 15px 22px 0;
+}
+
+.tools .row {
+  margin-bottom: 30px;
+}
+
+.tit {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.row .choose {
+  list-style: none;
+  margin: 0px 0 0 5px;
+}
+
+.row .choose .choice {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.choice :where(span, label) {
+  color: rgb(164, 250, 221);
+  padding-left: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.choice #fill {
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+}
+
+.choice:is(:hover, .active) i {
+  color: wheat;
+  font-weight: bolder;
+}
+
+.choice:is(:hover, .active) :where(span, label) {
+  color: wheat;
+  font-weight: bolder;
+}
+
+#fill:checked ~ label {
+  color: wheat;
+  font-weight: bolder;
+}
+
+.choice #slide {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+}
+
+.colors .choice {
+  height: 20px;
+  width: 20px;
+  background: rebeccapurple;
+  border-radius: 50%;
+  margin-top: 3px;
+  position: relative;
+}
+
+.colors .choose {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.colors .choice.selected::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #040504;
+}
+
+.colors .choice:hover::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  border-radius: inherit;
+  border: 2px solid #040504;
+}
+
+.colors .choice:nth-child(1) {
+  background-color: #212121;
+}
+
+.colors .choice:nth-child(2) {
+  background-color: #f8f8f8;
+}
+
+.colors .choice:nth-child(3) {
+  background-color: #00ff0d;
+}
+
+.colors .choice:nth-child(4) {
+  background-color: #40d9ea;
+}
+
+.colors .choice:nth-child(5) {
+  background-color: #ff6a00;
+}
+
+.colors .choose:nth-child(2) .choice:nth-child(1) {
+  background-color: #cc89c3;
+}
+
+.colors .choose:nth-child(2) .choice:nth-child(2) {
+  background-color: #d5004e;
+}
+
+.colors .choose:nth-child(2) .choice:nth-child(3) {
+  background-color: #e1ff00;
+}
+
+.colors .choose:nth-child(2) .choice:nth-child(4) {
+  background-color: #ff0000;
+}
+
+.colors .choose:nth-child(2) .choice:nth-child(5) {
+  background-color: #69300a;
+}
+
+.choice #pick {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice #picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.choice #picker2 {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.btns button {
+  width: 100%;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 5px 0;
+  margin-bottom: 13px;
+  cursor: pointer;
+  background: none;
+  font-size: 0.9rem;
+}
+
+.btns .clear {
+  background-color: rgb(12, 12, 12);
+  color: #f8f8f8;
+  border-radius: 5px;
+  border: 1px solid #f7f7f7;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.btns .save {
+  background-color: aquamarine;
+  color: rgb(30, 30, 30);
+  border-radius: 5px;
+  border: 1px solid rgb(58, 132, 107);
+  transition: all 0.3s ease;
+}
+
+.clear:hover {
+  background-color: #6c757d;
+  color: wheat;
+}
+
+.save:hover {
+  background-color: #4d5889;
+  color: wheat !important;
+  color: rgb(30, 30, 30);
+}
+
+.tools,
+.drawings,
+.tools:last-child {
+  border-radius: 25px;
+  overflow: hidden;
+  animation: neonBorder 3s linear infinite alternate-reverse;
+}
+
+@keyframes neonBorder {
+  0% {
+    border: 3px solid rgb(178, 240, 107);
+    box-shadow: 0 0 15px rgb(178, 240, 107);
+  }
+  50% {
+    border: 3px solid #40d9ea;
+    box-shadow: 0 0 25px #40d9ea;
+  }
+  100% {
+    border: 3px solid wheat;
+    box-shadow: 0 0 35px wheat;
+  }
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-size: auto;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .tools,
+  .drawings,
+  .tools:last-child {
+    width: 100%;
+  }
+
+  .tools,
+  .drawings,
+  .tools:last-child {
+    border-radius: 7px;
+    overflow: hidden;
+    animation: none;
+  }
+}
+
+.neon-color {
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.choose .neon-color:nth-child(1) {
+  background-color: #9df5ff;
+  box-shadow: 0 0 10px #9df5ff, 0 0 10px #9df5ff, 0 0 10px #9df5ff,
+    0 0 0px #9df5ff;
+}
+
+.choose .neon-color:nth-child(2) {
+  background-color: wheat;
+  box-shadow: 0 0 10px wheat, 0 0 10px wheat, 0 0 10px wheat, 0 0 0px wheat;
+}
+
+.choose .neon-color:nth-child(3) {
+  background-color: gray;
+  box-shadow: 0 0 10px gray, 0 0 10px gray, 0 0 10px gray, 0 0 0px gray;
+}
+
+.choose .neon-color:nth-child(4) {
+  background-color: orangered;
+  box-shadow: 0 0 10px orangered, 0 0 10px orangered, 0 0 10px orangered,
+    0 0 0px orangered;
+}
+
+.choose .neon-color:nth-child(5) {
+  background-color: hsl(300, 64%, 36%);
+  box-shadow: 0 0 10px rgb(233, 230, 233), 0 0 10px rgb(152, 33, 152),
+    0 0 10px rgb(255, 255, 255), 0 0 0px rgb(152, 33, 152);
+}
+
+.colors .choose.neon .neon-color:nth-child(1) {
+  background-color: #bbcc89;
+  box-shadow: 0 0 10px #bbcc89, 0 0 10px #bbcc89, 0 0 10px #bbcc89,
+    0 0 0px #bbcc89;
+}
+
+.colors .choose.neon .neon-color:nth-child(2) {
+  background-color: #107862;
+  box-shadow: 0 0 10px #107862, 0 0 10px #107862, 0 0 10px #107862,
+    0 0 0px #107862;
+}
+
+.colors .choose.neon .neon-color:nth-child(3) {
+  background-color: #7f4a64;
+  box-shadow: 0 0 10px #7f4a64, 0 0 10px #7f4a64, 0 0 10px #7f4a64,
+    0 0 0px #7f4a64;
+}
+
+.colors .choose.neon .neon-color:nth-child(4) {
+  background-color: #cc8f89;
+  box-shadow: 0 0 10px #cc8f89, 0 0 10px #cc8f89, 0 0 10px #cc8f89,
+    0 0 0px #cc8f89;
+}
+
+.colors .choose.neon .neon-color:nth-child(5) {
+  background-color: #6d483b;
+  box-shadow: 0 0 10px #6d483b, 0 0 10px #6d483b, 0 0 10px #6d483b,
+    0 0 0px #6d483b;
+}
